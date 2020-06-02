@@ -1,0 +1,239 @@
+/* Telefones em paisagem e abaixo */
+@media (max-width: 480px) {
+    .navbar{
+        min-height: 100px;
+    }
+    #popupDescritiva{
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: rgba(0,0,0,0.7) 2px 2px;
+        display: none;
+        position: relative;
+        z-index: 100;
+        height: auto;
+        width: 300px;
+        margin:50px auto 0px;
+        text-align: center;
+    }
+    .nomeVariavelInp{
+        box-shadow: none;
+        border: solid 1px darkgray;
+        border-radius: 10px;
+        display: block;
+        margin: 20px auto 20px;
+        outline: none;
+        width: 250px;
+    }
+    .dadosInp{
+        box-shadow: none;
+        border: solid 1px darkgray;
+        border-radius: 10px;
+        display: block;
+        margin: 0px auto 20px;
+        outline: none;
+        width: 250px;
+    }
+    #tabela-descritiva{
+        display: none;
+        width: 300px;
+        margin:100px auto;
+    }
+    #popupProbabilidadeUniforme{
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: rgba(0,0,0,0.7) 2px 2px;
+        display: none;
+        position: relative;
+        z-index: 100;
+        height: 300px;
+        width: 300px;
+        text-align: center;
+        margin: 100px auto;
+    }
+    .menorQ-Probabilidade{
+        display: none;
+        height: 40px;
+        margin-left: -4px;
+        box-shadow: none;
+        border: solid 1px #ced4da;
+        border-radius: .25rem;
+        width: 146px;
+    }
+    .inicial-Probabilidade{
+        display: none;
+        height: 40px;
+        margin-left: -4px;
+        box-shadow: none;
+        border: solid 1px #ced4da;
+        border-radius: .25rem;
+        width: 73px;
+    }
+    .final-Probabilidade{
+        display: none;
+        height: 40px;
+        box-shadow: none;
+        border: solid 1px #ced4da;
+        border-radius: .25rem;
+        width: 73px;
+    }
+    .valor-Propabilidade{
+        display: none;
+        height: 40px;
+        margin-left: -4px;
+        box-shadow: none;
+        border: solid 1px #ced4da;
+        border-radius: .25rem;
+        width: 146px;
+    }
+    .pontoMinInp{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: none;
+        border: solid 1px darkgray;
+        border-radius: 10px;
+        outline: none;
+        width: 250px;
+    }
+    .pontoMaxInp{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        box-shadow: none;
+        border: solid 1px darkgray;
+        border-radius: 10px;
+        outline: none;
+        width: 250px;
+    }
+
+    #popupProbabilidadeBinomial{
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: rgba(0,0,0,0.7) 2px 2px;
+        display: none;
+        padding-bottom: 20px;
+        position: relative;
+        z-index: 100;
+        height: auto;
+        width: 300px;
+        text-align: center;
+        margin: 100px auto 40px;
+    }
+    .QtdeAmostra{
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: none;
+        border: solid 1px darkgray;
+        outline: none;
+        width: 250px;
+    }
+    .txSucesso{
+        border-radius: 10px;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom: 5px;
+        box-shadow: none;
+        border: solid 1px darkgray;
+        outline: none;
+    }
+    .txFracasso{
+        border-radius: 10px;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom: 20px;
+        box-shadow: none;
+        border: solid 1px darkgray;
+        outline: none;
+    }
+    .txEventos{
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: none;
+        border: solid 1px darkgray;
+        outline: none;
+        width: 250px;
+    }
+    #popupProbabilidadeNormal{
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: rgba(0,0,0,0.7) 2px 2px;
+        display: none;
+        position: relative;
+        z-index: 100;
+        height: auto;
+        width: 300px;
+        text-align: center;
+        margin: 100px auto;
+    }
+    .mediaInp{
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: none;
+        border: solid 1px darkgray;
+        outline: none;
+        width: 250px;
+    }
+    .desvioInp{
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: none;
+        border: solid 1px darkgray;
+        outline: none;
+        width: 250px;
+    }
+    #popupCorrelacao{
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: rgba(0,0,0,0.7) 2px 2px;
+        display: none;
+        position: relative;
+        z-index: 100;
+        height: auto;
+        width: 300px;
+        text-align: center;
+        margin: 100px auto;
+    }
+}
+
+/* Telefones em paisagem a tablet em retrato */
+@media (max-width: 767px) {
+    /* estilos aqui */
+}
+
+/* Tablet em retrato a paisagem e desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* estilos aqui */
+    .nav-item{
+        position: relative;
+    }
+    .nav-link{
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    .nav-link:hover{
+        position: relative;
+        transition-duration: 1s;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        background-color: #6c3497;
+        align-items: center;
+    }
+}
+/* Desktop grande */
+@media (min-width: 1200px) {
+    /* estilos aqui */
+    .nav-item{
+        position: relative;
+    }
+    .nav-link{
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    .nav-link:hover{
+        position: relative;
+        transition-duration: 1s;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        background-color: #6c3497;
+        align-items: center;
+    }
+}

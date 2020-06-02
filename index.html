@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="Pages/images/icons/iconeIndex.png" rel="icon">
+    <link href="Pages/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="Pages/css/custom.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
+    <script src="Pages/JavaScript/popups.js"></script>
+    <script src="Pages/JavaScript/inputs.js"></script>
+    <script src="Pages/JavaScript/calculosDescritiva.js"></script>
+    <script src="Pages/JavaScript/Teste.js"></script>
+    <title>Index</title>
+</head>
+<body background="Pages/images/backgroundSite(1).jpg">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4b0082">
+    <a class="navbar-brand" href="index.html">
+        <img src="Pages/images/free_horizontal_on_white_by_logaster__1_-removebg-preview-removebg-preview.png" height="50" width=""/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link text-white" href="#" onclick="abrirDescritiva()"style="font-family: sans-serif"><b>Descritiva</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" onclick="abrirProbabilidadeEscolha()" style="font-family: sans-serif"><b>Probabilidade</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" onclick="abrirCorrelacao()" style="font-family: sans-serif"><b>Correlação</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="Pages/aboutUs.html" style="font-family: sans-serif"><b>Sobre nós</b></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--Fim do cabeçalho-->
+<!--Popups-->
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Como usar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed urna vel arcu aliquet ultrices. In vehicula pretium ante. Pellentesque in gravida nisi. Donec mollis urna ac dui vestibulum dapibus. Curabitur condimentum finibus lacus, nec aliquet lacus lobortis ut. Vestibulum luctus ex ac consectetur auctor. Ut iaculis gravida ligula. Sed pellentesque dolor ac dolor eleifend ullamcorper. Nam vel orci eget leo ullamcorper faucibus. Curabitur sed sem suscipit, luctus nisl ac, lacinia enim. Vestibulum eget urna elit. Pellentesque ac molestie nunc. Fusce et lacus tincidunt, vulputate ipsum eu, finibus dui. Aliquam consectetur malesuada nunc, vitae dignissim mauris vehicula a. Aliquam non turpis aliquet felis ultrices faucibus.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed urna vel arcu aliquet ultrices. In vehicula pretium ante. Pellentesque in gravida nisi. Donec mollis urna ac dui vestibulum dapibus. Curabitur condimentum finibus lacus, nec aliquet lacus lobortis ut. Vestibulum luctus ex ac consectetur auctor. Ut iaculis gravida ligula. Sed pellentesque dolor ac dolor eleifend ullamcorper. Nam vel orci eget leo ullamcorper faucibus. Curabitur sed sem suscipit, luctus nisl ac, lacinia enim. Vestibulum eget urna elit. Pellentesque ac molestie nunc. Fusce et lacus tincidunt, vulputate ipsum eu, finibus dui. Aliquam consectetur malesuada nunc, vitae dignissim mauris vehicula a. Aliquam non turpis aliquet felis ultrices faucibus.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed urna vel arcu aliquet ultrices. In vehicula pretium ante. Pellentesque in gravida nisi. Donec mollis urna ac dui vestibulum dapibus. Curabitur condimentum finibus lacus, nec aliquet lacus lobortis ut. Vestibulum luctus ex ac consectetur auctor. Ut iaculis gravida ligula. Sed pellentesque dolor ac dolor eleifend ullamcorper. Nam vel orci eget leo ullamcorper faucibus. Curabitur sed sem suscipit, luctus nisl ac, lacinia enim. Vestibulum eget urna elit. Pellentesque ac molestie nunc. Fusce et lacus tincidunt, vulputate ipsum eu, finibus dui. Aliquam consectetur malesuada nunc, vitae dignissim mauris vehicula a. Aliquam non turpis aliquet felis ultrices faucibus.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Descritiva-->
+<div id="popupDescritiva">
+    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupDescritiva').style.display='none'; document.getElementById('tabela-descritiva').style.display='none'">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#staticBackdrop"/>
+    <span class="txtDescritiva titulos text-uppercase">Estatística Descritiva</span>
+    <div id="selecao-descritiva">
+        <input class="nomeVariavelInp" placeholder="Título da Pesquisa" size="50" name="nomeVariavel">
+        <input class="dadosInp" placeholder="Digite os dados separados por ';'" size="50" name="dadosInp">
+        <select id="descritivaEscolha" name="ordemVariavel" class="custom-select my-1 mr-sm-2" style="width: 200px">
+            <option value="0">Selecione</option>
+            <option value="nominal">Nominal</option>
+            <option value="ordinal">Ordinal</option>
+            <option value="discreta">Discreta</option>
+            <option value="continua">Contínua</option>
+        </select>
+    </div>
+    <div id="options-group" class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="bntPopAmo btn btn-secondary">
+            <input type="radio" name="options" id="option1" value="populacao" checked> População
+        </label>
+        <label class="bntPopAmo btn btn-secondary">
+            <input type="radio" name="options" id="option2" value="amostra"> Amostra
+        </label>
+    </div>
+    <div class="row">
+        <div class="ml-auto mr-auto col-6">
+            <div class="form-group">
+                <input id="margemErro" class="form-control invisible" placeholder="Margem de erro" type="number" min="1" max="5">
+            </div>
+        </div>
+    </div>
+    <div id="ordernarInputs"></div>
+    <div id="calculate" class="calculate">
+        <a href="#scrolling"><button id="calcularDescritiva" class="btn btn-primary" type="submit" onclick="abrirTbDescritiva()">Calcular</button></a>
+    </div>
+    <div id="calculateOrdem">
+    <a href="#scrolling"><button id="btnOrdinal" class="btn btn-primary invisible" onclick="calculoOrdinal()">Calcular</button></a>
+    </div>
+    <input type="file" id="fileUpload" accept=".xls,.xlsx" /><br />
+    <button type="button" id="uploadExcel">Convert</button>
+    <pre id="jsonData"></pre>
+    <!--Seleção oculta(Separatriz)-->
+    <div id="medida-separatriz">
+        <span class="subtitulos" style="display: block">Medidas Separatrizes</span>
+        <select class="custom-select my-1 mr-sm-2" id="selectSeparatriz"  style="width: 200px;" onchange="separatrizSelect()">
+            <option value="0" selected>Selecione</option>
+            <option value="4">Quartil</option>
+            <option value="5">Quintil</option>
+            <option value="10">Decil</option>
+            <option value="100">Porcentil</option>
+        </select>
+        <span id="valorSeparatriz"></span>
+        <span id="separatriz"></span>
+        <div id="ranges-position">
+            <input class="slider" id="rg4" type="range" min="25" max="100" step="25" style="display: none ">
+            <input class="slider" id="rg5" type="range" min="20" max="100" step="20" style="display: none">
+            <input class="slider" id="rg10" type="range" min="10" max="100" step="10" style="display: none">
+            <input class="slider" id="rg100" type="range" min="1" max="100" step="1"   style="display: none">
+        </div>
+    </div>
+    <!--Fim Seleção oculta(Separatriz)-->
+</div>
+<!--Tabela Oculta(Descritiva)-->
+<div id="tabela-descritiva">
+    <table id="scrolling" class="table table-sm table-light">
+        <thead>
+        <tr>
+            <th scope="col" id="nomeVariavel"></th>
+            <th scope="col">fi</th>
+            <th scope="col">fR%</th>
+            <th scope="col">Fac</th>
+            <th scope="col">Fac%</th>
+        </tr>
+        </thead>
+        <tbody id="frequencia-descritiva"></tbody>
+    </table>
+    <table class="table table-sm table-light">
+        <thead>
+        <tr>
+            <th scope="col">Moda</th>
+            <th scope="col">Média</th>
+            <th scope="col">Mediana</th>
+        </tr>
+        </thead>
+        <tbody id="medidas-tendencia-central"></tbody>
+    </table>
+    <table class="table table-sm table-light">
+        <thead>
+        <tr>
+            <th scope="col">Desvio Padrão</th>
+            <th scope="col">Coeficente de Variação</th>
+        </tr>
+        </thead>
+        <tbody id="medidas-de-dispersao"></tbody>
+    </table>
+    <canvas id="myChart" style="background-color: white"></canvas>
+</div>
+<!--Fim Tabela Oculta(Descritiva)-->
+<!--Fim Descritiva-->
+<!--Probabilidade-->
+<div id="popupProbabilidadeEscolha">
+    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeEscolha').style.display='none'">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <span class="txtProbabilidade titulos text-uppercase">Probabilidade</span>
+    <div class="botoesProb">
+        <button type="button" class="btn btn-primary" onclick="abrirProbabilidadeUniforme()">Uniforme</button>
+        <button type="button" class="btn btn-primary" onclick="abrirProbabilidadeBinomial()">Binomial</button>
+        <button type="button" class="btn btn-primary" onclick="abrirProbabilidadeNormal()">Normal</button>
+    </div>
+</div>
+<div id="popupProbabilidadeUniforme">
+    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeUniforme').style.display='none'">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <span class="txtUniforme titulos text-uppercase">Uniforme</span>
+    <input class="pontoMinInp" placeholder="Ponto mínimo" size="40">
+    <input class="pontoMaxInp" placeholder="Ponto máximo" size="40">
+    <div class="uniforme-alinhamento">
+        <select id="comparacaoUniforme" class="custom-select " onchange="abrirComparacao()" style="width: 110px;height: 40px;margin-bottom: 5px">
+            <option value="0">Escolha...</option>
+            <option value="1">Menor que</option>
+            <option value="2">Entre</option>
+            <option value="3">Maior que</option>
+        </select>
+        <input id="menorQ-Probabilidade" class="menorQ-Probabilidade" placeholder="Valor:" size="30">
+        <input id="inicial-Probabilidade" class="inicial-Probabilidade" placeholder="Valor Inicial:" size="13"><input id="final-Probabilidade" class="final-Probabilidade" placeholder="Valor Final:" size="12">
+        <input id="valor-Probabilidade" class="valor-Propabilidade" placeholder="Valor:" size="30">
+    </div>
+    <button class="btn btn-primary" type="submit">Calcular</button>
+    <button class="btn btn-light" onclick="abrirProbabilidadeEscolha()">Voltar</button>
+</div>
+<div id="popupProbabilidadeBinomial">
+    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeBinomial').style.display='none'">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <span class="txtBinomial titulos text-uppercase">Binomial</span>
+    <input class="QtdeAmostra" placeholder="Quantidade da amostra (n):" size="50">
+    <input class="txSucesso" placeholder="Taxa de Sucesso (q):" size="22">
+    <input class="txFracasso" placeholder="Taxa de Fracasso (q):" size="22">
+    <input class="txEventos" placeholder="Insira os Eventos separados por ';'" size="50">
+    <button type="button" class="btn btn-primary">Calcular</button>
+    <button class="btn btn-light" onclick="abrirProbabilidadeEscolha()">Voltar</button>
+</div>
+<div id="popupProbabilidadeNormal">
+    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeNormal').style.display='none'">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <span class="txtNormal titulos text-uppercase">Normal</span>
+    <div>
+        <input class="mediaInp" placeholder="Média" size="40">
+        <input class="desvioInp" placeholder="Desvio Padrão" size="40">
+        <div class="normal-alinhamento">
+            <select id="comparacaoNormal" class="custom-select" onchange="abrirComparacaoN()" style="width: 110px;height: 40px;margin-bottom: 5px">
+                <option value="0">Escolha...</option>
+                <option value="1">Menor que</option>
+                <option value="2">Entre</option>
+                <option value="3">Maior que</option>
+            </select>
+            <input id="menorQ-ProbabilidadeN" class="menorQ-Probabilidade" placeholder="Valor:" size="30">
+            <input id="inicial-ProbabilidadeN" class="inicial-Probabilidade" placeholder="Valor Inicial:" size="13"><input id="final-ProbabilidadeN" class="final-Probabilidade" placeholder="Valor Final:" size="12">
+            <input id="valor-ProbabilidadeN" class="valor-Propabilidade" placeholder="Valor:" size="30">
+        </div>
+        <button class="btn btn-primary" type="submit">Calcular</button>
+        <button class="btn btn-light" onclick="abrirProbabilidadeEscolha()">Voltar</button>
+    </div>
+</div>
+<!--Fim Probabilidade-->
+<!--Correlação-->
+<div id="popupCorrelacao">
+    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupCorrelacao').style.display='none'">
+        <span aria-hidden="true">&times;</span>
+    </button><span class="txtCorrelacao titulos text-uppercase">Correlação</span>
+    <div>
+        <input class="nomeVariavelInp" placeholder="Insira os valores de X separados por ';'" size="50">
+        <input class="dadosInp" placeholder="Insira os valores de Y separados por ';'" size="50">
+    </div>
+    <div class="calculate">
+        <button class="btn btn-primary" type="submit">Calcular</button>
+    </div>
+</div>
+<!--Fim Correlação-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+<script src="Pages/JavaScript/tabelas.js"></script>
+</html>

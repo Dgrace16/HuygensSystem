@@ -1,0 +1,287 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'fonteTitulo';
+    src: url("../fonts/Lemon-milk/LEMONMILK-Medium.otf");
+}
+a{
+    transition-duration: 5s;
+    position: relative;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-image: url("../images/backgroundSite(1).jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.close{
+    margin-top: 5px;
+    margin-right: 8px;
+}
+.titulos{
+    font-family: fonteTitulo;
+    color: black;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.subtitulos{
+    font-family: Georgia;
+    color: black;
+    font-size: 25px;
+}
+#popupDescritiva{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(0,0,0,0.7) 2px 2px;
+    display: none;
+    position: relative;
+    z-index: 100;
+    height: auto;
+    width: 500px;
+    margin:50px auto 0px;
+    text-align: center;
+}
+.bntPopAmo{
+    margin-top: 50px;
+}
+.nomeVariavelInp{
+    box-shadow: none;
+    border: solid 1px darkgray;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto 20px;
+    outline: none;
+}
+.dadosInp{
+    box-shadow: none;
+    border: solid 1px darkgray;
+    border-radius: 10px;
+    display: block;
+    margin: 0px auto 20px;
+    outline: none;
+}
+.calculate{
+    display: block;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+#calculateOrdem{
+    padding-bottom: 20px;
+}
+#separatriz{
+    display: block;
+}
+#medida-separatriz{
+    display: none;
+    padding-bottom: 20px;
+}
+.ranges-position{
+   height: 200px;
+    width: 250px;
+    margin: 20px auto;
+}
+.slider{
+    -webkit-appearance: none;
+    margin: 20px auto;
+    width: 50%;
+    height: 5px;
+    background: #d3d3d3;
+    border-radius: 10px;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.slider:hover {
+    opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background: #4b0082;
+    cursor: pointer;
+}
+#tabela-descritiva{
+    display: none;
+    width: 500px;
+    margin:100px auto;
+}
+#popupProbabilidadeEscolha{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(0,0,0,0.7) 2px 2px;
+    display: none;
+    position: relative;
+    z-index: 100;
+    height: 140px;
+    width: 350px;
+    text-align: center;
+    margin: 200px auto;
+}
+#popupProbabilidadeUniforme{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(0,0,0,0.7) 2px 2px;
+    display: none;
+    position: relative;
+    z-index: 100;
+    height: 300px;
+    width: 400px;
+    text-align: center;
+    margin: 100px auto;
+}
+.uniforme-alinhamento{
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+}
+.menorQ-Probabilidade{
+    display: none;
+    height: 40px;
+    margin-left: -4px;
+    box-shadow: none;
+    border: solid 1px #ced4da;
+    border-radius: .25rem;
+}
+.inicial-Probabilidade{
+    display: none;
+    height: 40px;
+    margin-left: -4px;
+    box-shadow: none;
+    border: solid 1px #ced4da;
+    border-radius: .25rem;
+}
+.final-Probabilidade{
+    display: none;
+    height: 40px;
+    box-shadow: none;
+    border: solid 1px #ced4da;
+    border-radius: .25rem;
+}
+.valor-Propabilidade{
+    display: none;
+    height: 40px;
+    margin-left: -4px;
+    box-shadow: none;
+    border: solid 1px #ced4da;
+    border-radius: .25rem;
+}
+.pontoMinInp{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: none;
+    border: solid 1px darkgray;
+    border-radius: 10px;
+    outline: none;
+}
+.pontoMaxInp{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: none;
+    border: solid 1px darkgray;
+    border-radius: 10px;
+    outline: none;
+}
+
+#popupProbabilidadeBinomial{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(0,0,0,0.7) 2px 2px;
+    display: none;
+    position: relative;
+    z-index: 100;
+    height: 260px;
+    width: 430px;
+    text-align: center;
+    margin: 100px auto 40px;
+}
+.QtdeAmostra{
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: none;
+    border: solid 1px darkgray;
+    outline: none;
+}
+.txSucesso{
+    border-radius: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    box-shadow: none;
+    border: solid 1px darkgray;
+    outline: none;
+}
+.txFracasso{
+    border-radius: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    box-shadow: none;
+    border: solid 1px darkgray;
+    outline: none;
+}
+.txEventos{
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: none;
+    border: solid 1px darkgray;
+    outline: none;
+}
+#popupProbabilidadeNormal{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(0,0,0,0.7) 2px 2px;
+    display: none;
+    position: relative;
+    padding-bottom: 20px;
+    z-index: 100;
+    height: auto;
+    width: 400px;
+    text-align: center;
+    margin: 100px auto;
+}
+.mediaInp{
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: none;
+    border: solid 1px darkgray;
+    outline: none;
+}
+.desvioInp{
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: none;
+    border: solid 1px darkgray;
+    outline: none;
+}
+.normal-alinhamento{
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+}
+.botoesProb{
+    display: block;
+    margin-top: 20px;
+}
+#popupCorrelacao{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(0,0,0,0.7) 2px 2px;
+    display: none;
+    position: relative;
+    z-index: 100;
+    height: auto;
+    width: 430px;
+    text-align: center;
+    margin: 100px auto;
+}
