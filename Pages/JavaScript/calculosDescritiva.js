@@ -31,8 +31,6 @@ function abrirTbDescritiva() {
         let populacao = $('input[name="dadosInp"]')[0];
         let populacaoArray = populacao.value.split(';');
         nominalGlob = populacao.value.split(';');
-        populacaoArray.sort()
-        nominalGlob.sort()
         let unico = populacaoArray.filter(function(elem, index, self) {
             return index === self.indexOf(elem);
         });
@@ -132,7 +130,7 @@ function abrirTbDescritiva() {
         let nomeVariavel = $('input[name="nomeVariavel"]').val();
         let populacao = $('input[name="dadosInp"]')[0];
         let populacaoArray = populacao.value.split(';');
-        populacaoArray.sort(function compararNumeros(a, b) {return a - b;})
+        quickSort(populacaoArray)
         let agrupamentos = {};
         for(var i = 0;i < populacaoArray.length;i++) {
             let grupo = populacaoArray[i];
@@ -176,8 +174,8 @@ function abrirTbDescritiva() {
         let populacao = $('input[name="dadosInp"]')[0];
         let populacaoArray = populacao.value.split(';');
         discretaGlob = populacao.value.split(';');
-        discretaGlob.sort(function compararNumeros(a, b) {return a - b;})
-        populacaoArray.sort(function compararNumeros(a, b) {return a - b;})
+        quickSort(discretaGlob)
+        quickSort(populacaoArray)
         let unico = populacaoArray.filter(function(elem, index, self) {
             return index === self.indexOf(elem);
         });
@@ -319,7 +317,7 @@ function abrirTbDescritiva() {
         let nomeVariavel = $('input[name="nomeVariavel"]').val();
         let populacao = $('input[name="dadosInp"]')[0];
         let populacaoArray = populacao.value.split(';');
-        populacaoArray.sort((a, b) => a - b) // ordena em ordem alfabetica
+        quickSort(populacaoArray)
         let unico = populacaoArray.filter(function(elem, index, self) {
             return index === self.indexOf(elem);
         });
@@ -488,7 +486,7 @@ function calculoOrdinal() {
         let nomeVariavel = $('input[name="nomeVariavel"]').val();
         let populacao = $('input[name="dadosInp"]')[0];
         let populacaoArray = populacao.value.split(';');
-        populacaoArray.sort(function compararNumeros(a, b) {return a - b;})
+        quickSort(populacaoArray)
         let unico = populacaoArray.filter(function(elem, index, self) {
             return index === self.indexOf(elem);
         });
@@ -921,5 +919,32 @@ function separatrizSelect() {
                 separatriz.innerText = Number(medianaContinuaGlob)+((((continuaGlob.length)*(valorSeparatriz/100))-somaFantGlob)/frequenciaModaGlob)*Math.round(intervaloGlob)
             }
         }
+    }
+}
+function troca(vet, i, j) {
+    let aux = vet[i]
+    vet[i] = vet[j]
+    vet[j] = aux
+}
+function quickSort(vet, fnComp, posIni = 0, posFim = vet.length - 1) {
+    if(posFim > posIni) {
+        const posPivot = posFim
+        let posDiv = posIni - 1
+        // Percorre o vetor do início até a penúltima posição.
+        // Quando o elemento atual for menor que o elemento pivô,
+        // incrementa posDiv e faz a troca dos valores que estão
+        // nas posições i e posDiv entre si.
+        for(let i = posIni; i < posFim; i++) {
+            if(vet[i] < vet[posPivot] && i != posDiv) {
+                posDiv++
+                troca(vet, i, posDiv)
+            }
+        }
+        posDiv++
+        troca(vet, posDiv, posPivot)
+
+        quickSort(vet, fnComp, posIni, posDiv - 1)
+
+        quickSort(vet, fnComp, posDiv + 1, posFim)
     }
 }

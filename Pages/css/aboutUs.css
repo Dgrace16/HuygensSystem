@@ -1,0 +1,52 @@
+@charset "UTF-8";
+h2{
+    color: #8b5cac;
+    font-family: "Bodoni MT";
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 50px;
+}
+p{
+    margin: 0px 0px;
+}
+#artigo1{
+    display:block;
+    font-weight: bold;
+    margin: 0px auto 60px;
+    width: 1050px;
+}
+.primeiro-artigo{
+    display: inline-block;
+    margin: 20px auto;
+    vertical-align: middle;
+    text-align: left;
+    width: 500px;
+}
+.img1-artigo{
+    display: inline-block;
+}
+#img1Artigo{
+    vertical-align: middle;
+    width: 500px;
+}
+#artigo2{
+    display:block;
+    font-weight: bold;
+    margin: 0px auto 60px;
+    width: 1050px;
+}
+.segundo-artigo{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    width: 500px;
+}
+#img2Artigo{
+    vertical-align: middle;
+    width: 500px;
+}
+.equipe{
+    margin: 0px auto 100px;
+    width: 600px;
+}
