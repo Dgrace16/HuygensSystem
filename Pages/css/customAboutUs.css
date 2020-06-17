@@ -1,0 +1,62 @@
+/* Telefones em paisagem e abaixo */
+@media (max-width: 480px) {
+    html, body{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .navbar{
+        min-height: 100px;
+    }
+    #artigo1{
+        display:block;
+        font-weight: bold;
+        margin: 0px auto 60px;
+        width: 300px;
+    }
+    .primeiro-artigo{
+        position: relative;
+        display: block;
+        margin: 20px auto;
+        text-align: left;
+        width: 300px;
+    }
+    #img1Artigo{
+        width: 300px;
+    }
+    #artigo2{
+        display:block;
+        font-weight: bold;
+        margin: 0px auto 60px;
+        width: 300px;
+    }
+    .segundo-artigo{
+        display: block;
+        text-align: left;
+        margin: 10px auto;
+        width: 300px;
+    }
+    #img2Artigo{
+        margin: 10px auto;
+        width: 300px;
+    }
+    .equipe{
+        margin: 0px auto 100px;
+        width: 300px;
+    }
+
+}
+
+/* Telefones em paisagem a tablet em retrato */
+@media (max-width: 767px) {
+    /* estilos aqui */
+}
+
+/* Tablet em retrato a paisagem e desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* estilos aqui */
+}
+/* Desktop grande */
+@media (min-width: 1200px) {
+    /* estilos aqui */
+
+}

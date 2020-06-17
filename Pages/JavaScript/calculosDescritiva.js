@@ -20,7 +20,7 @@ var medianaContinuaGlob
 var somaFantGlob
 var frequenciaModaGlob
 var intervaloGlob
-function abrirTbDescritiva() {
+function calcDescritiva() {
     document.getElementById('ordernarInputs').innerHTML = '';
     document.getElementById('medida-separatriz').style.display='none'
     document.getElementById("valorSeparatriz").innerHTML = ""
@@ -930,10 +930,6 @@ function quickSort(vet, fnComp, posIni = 0, posFim = vet.length - 1) {
     if(posFim > posIni) {
         const posPivot = posFim
         let posDiv = posIni - 1
-        // Percorre o vetor do início até a penúltima posição.
-        // Quando o elemento atual for menor que o elemento pivô,
-        // incrementa posDiv e faz a troca dos valores que estão
-        // nas posições i e posDiv entre si.
         for(let i = posIni; i < posFim; i++) {
             if(vet[i] < vet[posPivot] && i != posDiv) {
                 posDiv++
@@ -942,9 +938,7 @@ function quickSort(vet, fnComp, posIni = 0, posFim = vet.length - 1) {
         }
         posDiv++
         troca(vet, posDiv, posPivot)
-
         quickSort(vet, fnComp, posIni, posDiv - 1)
-
         quickSort(vet, fnComp, posDiv + 1, posFim)
     }
 }

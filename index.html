@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="PT-br">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,10 +11,15 @@
     <link href="Pages/css/custom.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="Pages/JavaScript/popups.js"></script>
     <script src="Pages/JavaScript/inputs.js"></script>
     <script src="Pages/JavaScript/calculosDescritiva.js"></script>
+    <script src="Pages/JavaScript/calculoProbabilidade.js"></script>
     <script src="Pages/JavaScript/Teste.js"></script>
+    <script src="Pages/JavaScript/tabDistribuicaoNormal.js"></script>
     <title>Index</title>
 </head>
 <body background="Pages/images/backgroundSite(1).jpg">
@@ -45,7 +51,7 @@
 <!--Popups-->
 <!-- Button trigger modal -->
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="modalDescritiva" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
@@ -117,7 +123,7 @@
     <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupDescritiva').style.display='none'; document.getElementById('tabela-descritiva').style.display='none'">
         <span aria-hidden="true">&times;</span>
     </button>
-    <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#staticBackdrop"/>
+    <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#modalDescritiva"/>
     <span class="txtDescritiva titulos text-uppercase">Estatística Descritiva</span>
     <div id="selecao-descritiva">
         <input class="nomeVariavelInp" placeholder="Título da Pesquisa" size="50" name="nomeVariavel">
@@ -147,10 +153,10 @@
     </div>
     <div id="ordernarInputs"></div>
     <div id="calculate" class="calculate">
-        <a href="#scrolling"><button id="calcularDescritiva" class="btn btn-primary" type="submit" onclick="abrirTbDescritiva()">Calcular</button></a>
+        <a href="#scrolling1"><button id="calcularDescritiva" class="btn btn-primary" type="submit" onclick="calcDescritiva()">Calcular</button></a>
     </div>
     <div id="calculateOrdem">
-    <a href="#scrolling"><button id="btnOrdinal" class="btn btn-primary invisible" onclick="calculoOrdinal()">Calcular</button></a>
+    <a href="#scrolling1"><button id="btnOrdinal" class="btn btn-primary invisible" onclick="calculoOrdinal()">Calcular</button></a>
     </div>
     <input type="file" id="fileUpload" accept=".xls,.xlsx" /><br />
     <button type="button" id="uploadExcel">Convert</button>
@@ -178,7 +184,7 @@
 </div>
 <!--Tabela Oculta(Descritiva)-->
 <div id="tabela-descritiva">
-    <table id="scrolling" class="table table-sm table-light">
+    <table id="scrolling1" class="table table-sm table-light">
         <thead>
         <tr>
             <th scope="col" id="nomeVariavel"></th>
@@ -218,6 +224,7 @@
     <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeEscolha').style.display='none'">
         <span aria-hidden="true">&times;</span>
     </button>
+    <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#"/>
     <span class="txtProbabilidade titulos text-uppercase">Probabilidade</span>
     <div class="botoesProb">
         <button type="button" class="btn btn-primary" onclick="abrirProbabilidadeUniforme()">Uniforme</button>
@@ -229,9 +236,10 @@
     <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeUniforme').style.display='none'">
         <span aria-hidden="true">&times;</span>
     </button>
+    <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#modalUniforme"/>
     <span class="txtUniforme titulos text-uppercase">Uniforme</span>
-    <input class="pontoMinInp" placeholder="Ponto mínimo" size="40">
-    <input class="pontoMaxInp" placeholder="Ponto máximo" size="40">
+    <input class="pontoMinInp" name="pontoMin" placeholder="Ponto mínimo" size="40">
+    <input class="pontoMaxInp" name="pontoMax" placeholder="Ponto máximo" size="40">
     <div class="uniforme-alinhamento">
         <select id="comparacaoUniforme" class="custom-select " onchange="abrirComparacao()" style="width: 110px;height: 40px;margin-bottom: 5px">
             <option value="0">Escolha...</option>
@@ -239,33 +247,36 @@
             <option value="2">Entre</option>
             <option value="3">Maior que</option>
         </select>
-        <input id="menorQ-Probabilidade" class="menorQ-Probabilidade" placeholder="Valor:" size="30">
-        <input id="inicial-Probabilidade" class="inicial-Probabilidade" placeholder="Valor Inicial:" size="13"><input id="final-Probabilidade" class="final-Probabilidade" placeholder="Valor Final:" size="12">
-        <input id="valor-Probabilidade" class="valor-Propabilidade" placeholder="Valor:" size="30">
+        <input id="menorQ-Probabilidade" name="menorQProbabilidade" class="menorQ-Probabilidade" placeholder="Valor:" size="30">
+        <input id="inicial-Probabilidade" name="inicialProbabilidade" class="inicial-Probabilidade" placeholder="Valor Inicial:" size="13"><input id="final-Probabilidade" name="finalProbabilidade" class="final-Probabilidade" placeholder="Valor Final:" size="12">
+        <input id="valor-Probabilidade" name="maiorQProbabilidade" class="valor-Propabilidade" placeholder="Valor:" size="30">
     </div>
-    <button class="btn btn-primary" type="submit">Calcular</button>
+    <a href="#scrolling2"><button class="btn btn-primary" type="submit" onclick="calcProbUniforme()">Calcular</button></a>
     <button class="btn btn-light" onclick="abrirProbabilidadeEscolha()">Voltar</button>
 </div>
 <div id="popupProbabilidadeBinomial">
     <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeBinomial').style.display='none'">
         <span aria-hidden="true">&times;</span>
     </button>
+    <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#modalBinomial"/>
     <span class="txtBinomial titulos text-uppercase">Binomial</span>
-    <input class="QtdeAmostra" placeholder="Quantidade da amostra (n):" size="50">
-    <input class="txSucesso" placeholder="Taxa de Sucesso (q):" size="22">
-    <input class="txFracasso" placeholder="Taxa de Fracasso (q):" size="22">
-    <input class="txEventos" placeholder="Insira os Eventos separados por ';'" size="50">
-    <button type="button" class="btn btn-primary">Calcular</button>
+    <input class="QtdeAmostra" name="qtdeAmostra" placeholder="Quantidade da amostra (n):" size="50">
+    <input class="txSucesso" name="pSucesso" placeholder="Taxa de Sucesso (p):" size="22">
+    <input class="txFracasso" name="qFracasso" placeholder="Taxa de Fracasso (q):" size="22">
+    <input class="txEventos" name="Evento" placeholder="Insira os Eventos separados por ';'" size="50">
+    <a href="#scrolling2"><button type="button" class="btn btn-primary" onclick="calcProbBinomial()">Calcular</button></a>
     <button class="btn btn-light" onclick="abrirProbabilidadeEscolha()">Voltar</button>
 </div>
+
 <div id="popupProbabilidadeNormal">
     <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeNormal').style.display='none'">
         <span aria-hidden="true">&times;</span>
     </button>
+    <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#modalNormal"/>
     <span class="txtNormal titulos text-uppercase">Normal</span>
     <div>
-        <input class="mediaInp" placeholder="Média" size="40">
-        <input class="desvioInp" placeholder="Desvio Padrão" size="40">
+        <input class="mediaInp" name="mediaInp" placeholder="Média" size="40">
+        <input class="desvioInp" name="desvioInp" placeholder="Desvio Padrão" size="40">
         <div class="normal-alinhamento">
             <select id="comparacaoNormal" class="custom-select" onchange="abrirComparacaoN()" style="width: 110px;height: 40px;margin-bottom: 5px">
                 <option value="0">Escolha...</option>
@@ -273,20 +284,43 @@
                 <option value="2">Entre</option>
                 <option value="3">Maior que</option>
             </select>
-            <input id="menorQ-ProbabilidadeN" class="menorQ-Probabilidade" placeholder="Valor:" size="30">
-            <input id="inicial-ProbabilidadeN" class="inicial-Probabilidade" placeholder="Valor Inicial:" size="13"><input id="final-ProbabilidadeN" class="final-Probabilidade" placeholder="Valor Final:" size="12">
-            <input id="valor-ProbabilidadeN" class="valor-Propabilidade" placeholder="Valor:" size="30">
+            <input id="menorQ-ProbabilidadeN" name="menorQ-ProbabilidadeN" class="menorQ-Probabilidade" placeholder="Valor:" size="30">
+            <input id="inicial-ProbabilidadeN" name="inicial-ProbabilidadeN" class="inicial-Probabilidade" placeholder="Valor Inicial:" size="13"><input id="final-ProbabilidadeN" name="final-ProbabilidadeN" class="final-Probabilidade" placeholder="Valor Final:" size="12">
+            <input id="valor-ProbabilidadeN" name="valor-ProbabilidadeN" class="valor-Propabilidade" placeholder="Valor:" size="30">
         </div>
-        <button class="btn btn-primary" type="submit">Calcular</button>
+        <a href="##scrolling3"><button class="btn btn-primary" type="submit" onclick="calcProbNormal()">Calcular</button></a>
         <button class="btn btn-light" onclick="abrirProbabilidadeEscolha()">Voltar</button>
     </div>
+</div>
+<div id="tabela-probabilidade">
+    <table id="scrolling2" class="table table-sm table-light">
+        <thead>
+        <tr>
+            <th scope="col">Probabilidade</th>
+            <th scope="col">Média</th>
+            <th scope="col">Desvio Padrão</th>
+            <th scope="col">Coeficente de Variação</th>
+        </tr>
+        </thead>
+        <tbody id="medidas-probabilidade"></tbody>
+    </table>
+</div>
+<div id="tabela-probNormal">
+    <table id="#scrolling3" class="table table-sm table-light">
+        <thead>
+            <th scope="col">Probabilidade:</th>
+        </thead>
+        <tbody id="medidas-probNormal"></tbody>
+    </table>
 </div>
 <!--Fim Probabilidade-->
 <!--Correlação-->
 <div id="popupCorrelacao">
     <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupCorrelacao').style.display='none'">
         <span aria-hidden="true">&times;</span>
-    </button><span class="txtCorrelacao titulos text-uppercase">Correlação</span>
+    </button>
+    <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#modalCorrelacao"/>
+    <span class="txtCorrelacao titulos text-uppercase">Correlação</span>
     <div>
         <input class="nomeVariavelInp" placeholder="Insira os valores de X separados por ';'" size="50">
         <input class="dadosInp" placeholder="Insira os valores de Y separados por ';'" size="50">
@@ -296,9 +330,6 @@
     </div>
 </div>
 <!--Fim Correlação-->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 <script src="Pages/JavaScript/tabelas.js"></script>
 </html>
