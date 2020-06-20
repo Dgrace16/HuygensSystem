@@ -47,6 +47,18 @@ p{
     width: 500px;
 }
 .equipe{
-    margin: 0px auto 100px;
+    margin: 0px auto 20px;
     width: 600px;
+}
+.div-redeSocial{
+    display: block;
+    margin: 0px auto;
+    width: 215px;
+}
+.redes-sociais{
+    width: 30px;
+    cursor:pointer;
+}
+.redes-sociais, img{
+    margin: 10px;
 }

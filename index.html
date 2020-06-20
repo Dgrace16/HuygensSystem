@@ -18,7 +18,8 @@
     <script src="Pages/JavaScript/inputs.js"></script>
     <script src="Pages/JavaScript/calculosDescritiva.js"></script>
     <script src="Pages/JavaScript/calculoProbabilidade.js"></script>
-    <script src="Pages/JavaScript/Teste.js"></script>
+    <script src="Pages/JavaScript/importDescritiva.js"></script>
+    <script src="Pages/JavaScript/importCorrelacao.js"></script>
     <script src="Pages/JavaScript/tabDistribuicaoNormal.js"></script>
     <title>Index</title>
 </head>
@@ -48,9 +49,11 @@
     </div>
 </nav>
 <!--Fim do cabeçalho-->
-<!--Popups-->
-<!-- Button trigger modal -->
+
+
 <!-- Modal -->
+
+<!-- DESCRITIVA -->
 <div class="modal fade" id="modalDescritiva" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
@@ -118,6 +121,119 @@
         </div>
     </div>
 </div>
+<!-- FIM DESCRITIVA -->
+
+<!-- ESCOLHA PROB -->
+<div class="modal fade" id="modalProbEscolha" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Como usar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>Estatística Probabilística</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIM ESCOLHA PROB -->
+
+<!-- UNIFORME  -->
+<div class="modal fade" id="modalUniforme" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Como usar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>Estatística Probabilística Uniforme</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIM UNIFORME -->
+
+<!-- BINOMIAL -->
+<div class="modal fade" id="modalBinomial" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Como usar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>Estatística Probabilística Binomial</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIM BINOMIAL -->
+
+<!-- NORMAL -->
+<div class="modal fade" id="modalNormal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Como usar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>Estatística Probabilística Normal</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIM NORMAL -->
+
+<!-- CORRELAÇÃO -->
+<div class="modal fade" id="modalCorrelacao" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Como usar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>Correlação Estatística</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIM CORRELAÇÃO -->
+
+<!-- FIM MODAL -->
+
+
+<!--Popups-->
+
 <!--Descritiva-->
 <div id="popupDescritiva">
     <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupDescritiva').style.display='none'; document.getElementById('tabela-descritiva').style.display='none'">
@@ -158,9 +274,8 @@
     <div id="calculateOrdem">
     <a href="#scrolling1"><button id="btnOrdinal" class="btn btn-primary invisible" onclick="calculoOrdinal()">Calcular</button></a>
     </div>
-    <input type="file" id="fileUpload" accept=".xls,.xlsx" /><br />
-    <button type="button" id="uploadExcel">Convert</button>
-    <pre id="jsonData"></pre>
+    <input type="file" id="fileUpload1" accept=".xls,.xlsx" /><br />
+    <button type="button" id="uploadExcel1">Converter</button>
     <!--Seleção oculta(Separatriz)-->
     <div id="medida-separatriz">
         <span class="subtitulos" style="display: block">Medidas Separatrizes</span>
@@ -224,7 +339,7 @@
     <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeEscolha').style.display='none'">
         <span aria-hidden="true">&times;</span>
     </button>
-    <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#"/>
+    <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#modalProbEscolha"/>
     <span class="txtProbabilidade titulos text-uppercase">Probabilidade</span>
     <div class="botoesProb">
         <button type="button" class="btn btn-primary" onclick="abrirProbabilidadeUniforme()">Uniforme</button>
@@ -322,12 +437,15 @@
     <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#modalCorrelacao"/>
     <span class="txtCorrelacao titulos text-uppercase">Correlação</span>
     <div>
-        <input class="nomeVariavelInp" placeholder="Insira os valores de X separados por ';'" size="50">
-        <input class="dadosInp" placeholder="Insira os valores de Y separados por ';'" size="50">
+        <input class="nomeVariavelInp" name="rent" placeholder="Insira os valores de X separados por ';'" size="50">
+        <input class="dadosInp" name="mortgage" placeholder="Insira os valores de Y separados por ';'" size="50">
     </div>
     <div class="calculate">
         <button class="btn btn-primary" type="submit">Calcular</button>
     </div>
+    <input type="file" id="fileUpload" accept=".xls,.xlsx" /><br />
+    <button type="button" id="uploadExcel">Converter</button>
+    <pre id="jsonData"></pre>
 </div>
 <!--Fim Correlação-->
 </body>

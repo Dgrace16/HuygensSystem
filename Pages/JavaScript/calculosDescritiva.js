@@ -65,23 +65,28 @@ function calcDescritiva() {
 
 
         //Cálculo Moda
-        let ax = unico[0]
-        let iguais = 0
+        let ax = agrupamentos[unico[0]]
+        let diferente = 0
         let moda = ""
         for (let i = 0;i < unico.length;i++){
-            if (agrupamentos[unico[0]] !== agrupamentos[unico[i]]){
-                iguais++
+            console.log(agrupamentos[unico[i]])
+            if (ax !== agrupamentos[unico[i]]){
+                diferente++
             }
         }
-        for ( var aux in agrupamentos){
-            if(iguais !== 0){
-                if(ax <= agrupamentos[aux]){
-                    ax = agrupamentos[aux]
-                    moda = moda + aux + "|"
-                }
-            }else {
-                moda = "Não existe"
+        for (let i = 0;i < unico.length;i++){
+            if(ax < agrupamentos[unico[i]]){
+                ax = agrupamentos[unico[i]]
             }
+        }
+        if (diferente !== 0) {
+            for (let i = 0; i < unico.length; i++) {
+                if (ax === agrupamentos[unico[i]]) {
+                    moda += unico[i] + "|"
+                }
+            }
+        }else {
+            moda = "Não existe"
         }
         //Cálculo de Mediana
         if(populacaoArray.length%2 === 0){
@@ -208,17 +213,17 @@ function calcDescritiva() {
             }
         }
         //Cálculo Moda
-        let ax = unico[0]
-        let iguais = 0
+        let ax = frequencia[0]
+        let diferentes = 0
         let moda = ""
         for (aux in unico){
-            if (frequencia[ax] !== frequencia[aux]){
-                iguais++
+            if (ax !== frequencia[aux]){
+                diferentes++
             }
         }
         for(let i = 0;i < unico.length;i++){
-            if(iguais !== 0){
-                if(frequencia[i] >= ax) {
+            if(diferentes !== 0){
+                if(frequencia[i] > ax) {
                     ax = frequencia[i]
                 }
                 if (i === unico.length - 1) {
