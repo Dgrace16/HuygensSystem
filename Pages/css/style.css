@@ -306,3 +306,12 @@ body{
     text-align: center;
     margin: 100px auto;
 }
+#qrCodeDiv{
+    display: block;
+}
+#qrCode{
+    position: absolute;
+    height: 150px;
+    bottom: 40px;
+    right: 40px;
+}

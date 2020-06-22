@@ -101,9 +101,15 @@ function buscaTabelaZ(variavel,media,desvio,variavelAux,auxiliar) {
         for(let i = 0;i < numeroZ.length;i++){
             tabelaZ.push(numeroZ.charAt(i))
         }
-        let row = tabelaZ[0]+tabelaZ[1]+tabelaZ[2];
+        let row
+        if (tabelaZ[2] !== '0') {
+             row = tabelaZ[0] + tabelaZ[1] + tabelaZ[2];
+        }else {
+             row = tabelaZ[0]
+        }
         let column = tabelaZ[3];
         let aux = tabela[row];
+        console.log(aux[column])
         switch (auxiliar){
             case "+":
                 probabilidade = (0.5 + aux[column])*100;

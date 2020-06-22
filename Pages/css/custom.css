@@ -195,8 +195,11 @@
 }
 
 /* Telefones em paisagem a tablet em retrato */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     /* estilos aqui */
+    #qrCodeDiv{
+        display: none;
+    }
 }
 
 /* Tablet em retrato a paisagem e desktop */
