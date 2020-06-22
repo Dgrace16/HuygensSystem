@@ -94,7 +94,7 @@ function calcProbBinomial(){
 function buscaTabelaZ(variavel,media,desvio,variavelAux,auxiliar) {
     let probabilidade = 0;
     if (typeof variavelAux === 'undefined'){
-    let numeroZ = Math.abs((variavel - media)/desvio);
+    let numeroZ = (Math.abs((variavel - media)/desvio)).toFixed(2);
         numeroZ = numeroZ.toString();
         console.log(numeroZ);
         let tabelaZ = [];
@@ -117,7 +117,8 @@ function buscaTabelaZ(variavel,media,desvio,variavelAux,auxiliar) {
         console.log(auxiliar);
         document.getElementById("medidas-probNormal").innerHTML = `<td>${probabilidade.toFixed(2)}%</td>`
     }else {
-        let numeroZ1 = Math.abs((variavel - media)/desvio);
+        let numeroZ1 = (Math.abs((variavel - media)/desvio)).toFixed(2);
+        console.log(variavel,media,desvio,numeroZ1)
         numeroZ1 = numeroZ1.toString();
         console.log(numeroZ1);
         let tabelaZ1 = [];
@@ -125,10 +126,11 @@ function buscaTabelaZ(variavel,media,desvio,variavelAux,auxiliar) {
             tabelaZ1.push(numeroZ1.charAt(i))
         }
         let row1 = tabelaZ1[0]+tabelaZ1[1]+tabelaZ1[2];
+        console.log(numeroZ1)
         let column1 = tabelaZ1[3];
         let aux1 = tabela[row1];
 
-        let numeroZ2 = Math.abs((variavelAux - media)/desvio);
+        let numeroZ2 = (Math.abs((variavelAux - media)/desvio)).toFixed(2);
         numeroZ2 = numeroZ2.toString();
         console.log(numeroZ2);
         let tabelaZ2 = [];
@@ -145,20 +147,20 @@ function buscaTabelaZ(variavel,media,desvio,variavelAux,auxiliar) {
     document.getElementById("tabela-probNormal").style.display = 'block'
 }
 function calcProbNormal() {
-    let media = $('input[name="mediaInp"]').val();
-    let desvio = $('input[name="desvioInp"]').val();
+    let media = parseFloat($('input[name="mediaInp"]').val());
+    let desvio = parseFloat($('input[name="desvioInp"]').val());
     if(document.getElementById("comparacaoNormal").value === '0'){
         alert("Insira os dados!")
     }else if (document.getElementById("comparacaoNormal").value === '1'){
-        let menorQProbabilidade = parseInt($('input[name="menorQ-ProbabilidadeN"]').val());
+        let menorQProbabilidade = parseFloat($('input[name="menorQ-ProbabilidadeN"]').val());
         let auxiliar = "+";
         buscaTabelaZ(menorQProbabilidade,media,desvio,undefined,auxiliar)
     }else if (document.getElementById("comparacaoNormal").value === '2'){
-        let inicialProbabilidade = parseInt($('input[name="inicial-ProbabilidadeN"]').val());
-        let finalProbabilidade = parseInt($('input[name="final-ProbabilidadeN"]').val());
+        let inicialProbabilidade = parseFloat($('input[name="inicial-ProbabilidadeN"]').val());
+        let finalProbabilidade = parseFloat($('input[name="final-ProbabilidadeN"]').val());
         buscaTabelaZ(inicialProbabilidade,media,desvio,finalProbabilidade)
     }else if (document.getElementById("comparacaoNormal").value === '3') {
-        let maiorQProbabilidade = parseInt($('input[name="valor-ProbabilidadeN"]').val());
+        let maiorQProbabilidade = parseFloat($('input[name="valor-ProbabilidadeN"]').val());
         let auxiliar = "-";
         buscaTabelaZ(maiorQProbabilidade,media,desvio,undefined,auxiliar)
     }
