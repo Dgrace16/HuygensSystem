@@ -18,6 +18,7 @@
     <script src="Pages/JavaScript/inputs.js"></script>
     <script src="Pages/JavaScript/calculosDescritiva.js"></script>
     <script src="Pages/JavaScript/calculoProbabilidade.js"></script>
+    <script src="Pages/JavaScript/calculoCorrelacao.js"></script>
     <script src="Pages/JavaScript/importDescritiva.js"></script>
     <script src="Pages/JavaScript/importCorrelacao.js"></script>
     <script src="Pages/JavaScript/tabDistribuicaoNormal.js"></script>
@@ -260,13 +261,6 @@
             <input type="radio" name="options" id="option2" value="amostra"> Amostra
         </label>
     </div>
-    <div class="row">
-        <div class="ml-auto mr-auto col-6">
-            <div class="form-group">
-                <input id="margemErro" class="form-control invisible" placeholder="Margem de erro" type="number" min="1" max="5">
-            </div>
-        </div>
-    </div>
     <div id="ordernarInputs"></div>
     <div id="calculate" class="calculate">
         <a href="#scrolling1"><button id="calcularDescritiva" class="btn btn-primary" type="submit" onclick="calcDescritiva()">Calcular</button></a>
@@ -407,7 +401,7 @@
         <button class="btn btn-light" onclick="abrirProbabilidadeEscolha()">Voltar</button>
     </div>
 </div>
-<div id="tabela-probabilidade">
+<div id="tabela-probUniforme">
     <table id="scrolling2" class="table table-sm table-light">
         <thead>
         <tr>
@@ -431,7 +425,7 @@
 <!--Fim Probabilidade-->
 <!--Correlação-->
 <div id="popupCorrelacao">
-    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupCorrelacao').style.display='none'">
+    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupCorrelacao').style.display='none';document.getElementById('tabela-correlacao').style.display='none'">
         <span aria-hidden="true">&times;</span>
     </button>
     <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#modalCorrelacao"/>
@@ -441,11 +435,26 @@
         <input class="dadosInp" name="mortgage" placeholder="Insira os valores de Y separados por ';'" size="50">
     </div>
     <div class="calculate">
-        <button class="btn btn-primary" type="submit">Calcular</button>
+        <button class="btn btn-primary" type="submit" onclick="calcCorrelacao()">Calcular</button>
     </div>
     <input type="file" id="fileUpload" accept=".xls,.xlsx" /><br />
     <button type="button" id="uploadExcel">Converter</button>
     <pre id="jsonData"></pre>
+    <div id="pontoFuturo">
+        <input placeholder="Projeção" id="p1" onkeyup="pontoFuturo()" size="10"><select id="escolhaFuturo"><option value="X" selected>X</option><option value="Y">Y</option></select><input placeholder="Resultado da Projeção" id="p2" size="10" readonly>
+    </div>
+</div>
+<div id="tabela-correlacao">
+    <table class="table table-sm table-light">
+        <thead>
+        <tr>
+            <th scope="col">Correlação</th>
+            <th scope="col">Equação</th>
+        </tr>
+        </thead>
+        <tbody id="medidas-correlacao"></tbody>
+    </table>
+    <canvas id="correlacaoChart" style="background-color: white"></canvas>
 </div>
 <div id="qrCodeDiv">
     <img id="qrCode" src="Pages/images/qrCode.jpeg">

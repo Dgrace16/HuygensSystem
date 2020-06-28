@@ -131,7 +131,13 @@ function buscaTabelaZ(variavel,media,desvio,variavelAux,auxiliar) {
         for(let i = 0;i < numeroZ1.length;i++){
             tabelaZ1.push(numeroZ1.charAt(i))
         }
-        let row1 = tabelaZ1[0]+tabelaZ1[1]+tabelaZ1[2];
+        let row1
+        if(tabelaZ1[2] !== '0'){
+            row1 = tabelaZ1[0]+tabelaZ1[1]+tabelaZ1[2];
+        }else {
+            row1 = tabelaZ1[0]
+        }
+
         console.log(numeroZ1)
         let column1 = tabelaZ1[3];
         let aux1 = tabela[row1];
@@ -143,10 +149,16 @@ function buscaTabelaZ(variavel,media,desvio,variavelAux,auxiliar) {
         for(let i = 0;i < numeroZ2.length;i++){
             tabelaZ2.push(numeroZ2.charAt(i))
         }
-        let row2 = tabelaZ2[0]+tabelaZ2[1]+tabelaZ2[2];
+        let row2
+        if(tabelaZ2[2] !== '0'){
+            row2 = tabelaZ2[0]+tabelaZ2[1]+tabelaZ2[2];
+        }else {
+            row2 = tabelaZ2[0]
+        }
+        console.log(row2,row1)
         let column2 = tabelaZ2[3];
         let aux2 = tabela[row2];
-        let probabilidade = (aux1[column1]*100) + (aux2[column2]*100);
+        let probabilidade = Math.abs((aux1[column1]*100) + (aux2[column2]*100));
         console.log((aux1[column1]*100),(aux2[column2]*100));
         document.getElementById("medidas-probNormal").innerHTML = `<td>${probabilidade.toFixed(2)}%</td>`
     }

@@ -105,7 +105,7 @@ function calcDescritiva() {
             coresAleatorias02[i] = Number&&String("rgba("+r+","+g+","+b+","+Number(0.2)+")")
             coresAleatorias1[i] = Number&&String("rgba("+r+","+g+","+b+","+Number(1)+")")
         }
-        var ctx = document.getElementById('myChart');
+        let ctx = document.getElementById('myChart');
         var myChart = new Chart(ctx, {
             type: 'pie',
             data: {

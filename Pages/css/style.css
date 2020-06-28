@@ -273,12 +273,12 @@ body{
     display: block;
     margin-top: 20px;
 }
-#tabela-probabilidade{
+#tabela-probUniforme{
     display: none;
     width: 500px;
     margin: 100px auto;
 }
-#tabela-probabilidade th{
+#tabela-probUniforme th{
     font-size: 15px;
 }
 #tabela-probNormal{
@@ -314,4 +314,17 @@ body{
     height: 150px;
     bottom: 40px;
     right: 40px;
+}
+#pontoFuturo{
+    display: none;
+    padding: 20px;
+}
+#escolhaFuturo{
+    margin: -1px;
+    height: 30px;
+}
+#tabela-correlacao{
+    display: none;
+    width: 500px;
+    margin:100px auto;
 }
