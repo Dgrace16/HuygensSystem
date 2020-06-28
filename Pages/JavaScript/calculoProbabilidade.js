@@ -112,10 +112,22 @@ function buscaTabelaZ(variavel,media,desvio,variavelAux,auxiliar) {
         console.log(aux[column])
         switch (auxiliar){
             case "+":
-                probabilidade = (0.5 + aux[column])*100;
+                if (variavel < media){
+                    probabilidade = (0.5 - aux[column])*100;
+                }else if (variavel > media){
+                    probabilidade = (0.5 + aux[column])*100;
+                }else if (variavel === media){
+                    probabilidade = (0.5)*100;
+                }
                 break;
             case "-":
-                probabilidade = (0.5 - aux[column])*100;
+                if (variavel < media){
+                    probabilidade = (0.5 + aux[column])*100;
+                }else if (variavel > media){
+                    probabilidade = (0.5 - aux[column])*100;
+                }else if (variavel === media){
+                    probabilidade = (0.5)*100;
+                }
                 break;
             default:
                 break;
@@ -158,7 +170,18 @@ function buscaTabelaZ(variavel,media,desvio,variavelAux,auxiliar) {
         console.log(row2,row1)
         let column2 = tabelaZ2[3];
         let aux2 = tabela[row2];
-        let probabilidade = Math.abs((aux1[column1]*100) + (aux2[column2]*100));
+        let probabilidade
+        if (variavel > media && variavelAux > media){
+            probabilidade = Math.abs((aux1[column1]*100) - (aux2[column2]*100))
+        }else if (variavel < media && variavelAux < media){
+            probabilidade = Math.abs((aux1[column1]*100) - (aux2[column2]*100))
+        }else if (variavel < media && variavelAux > media){
+            probabilidade = Math.abs((aux1[column1]*100) + (aux2[column2]*100));
+        }else if (variavelAux === media && variavel < media){
+            probabilidade = (aux1[column1]*100);
+        }else if (variavel === media && variavelAux > media){
+            probabilidade = (aux2[column2]*100);
+        }
         console.log((aux1[column1]*100),(aux2[column2]*100));
         document.getElementById("medidas-probNormal").innerHTML = `<td>${probabilidade.toFixed(2)}%</td>`
     }
