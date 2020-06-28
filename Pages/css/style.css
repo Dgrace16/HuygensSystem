@@ -273,12 +273,12 @@ body{
     display: block;
     margin-top: 20px;
 }
-#tabela-probUniforme{
+#tabela-probabilidade{
     display: none;
     width: 500px;
     margin: 100px auto;
 }
-#tabela-probUniforme th{
+#tabela-probabilidade th{
     font-size: 15px;
 }
 #tabela-probNormal{

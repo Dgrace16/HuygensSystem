@@ -86,7 +86,7 @@ function calcProbBinomial(){
             desvio = Math.sqrt(n*sucesso*fracasso);
             variacao = (desvio/media)*100
         }
-        document.getElementById("tabela-probabilidade").style.display = 'block';
+        document.getElementById("tabela-probabilidade").style.display ='block';
         document.getElementById("medidas-probabilidade").innerHTML = `<tr><td>${(probabilidade*100).toFixed(2)}%</td><td>${media.toFixed(2)}</td><td>${desvio.toFixed(2)}</td><td>${variacao.toFixed(2)}%</td></tr>`
     }
 }

@@ -342,7 +342,7 @@
     </div>
 </div>
 <div id="popupProbabilidadeUniforme">
-    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeUniforme').style.display='none'">
+    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeUniforme').style.display='none',document.getElementById('tabela-probabilidade').style.display ='none'">
         <span aria-hidden="true">&times;</span>
     </button>
     <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#modalUniforme"/>
@@ -364,7 +364,7 @@
     <button class="btn btn-light" onclick="abrirProbabilidadeEscolha()">Voltar</button>
 </div>
 <div id="popupProbabilidadeBinomial">
-    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeBinomial').style.display='none'">
+    <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeBinomial').style.display='none',document.getElementById('tabela-probabilidade').style.display ='none'">
         <span aria-hidden="true">&times;</span>
     </button>
     <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#modalBinomial"/>
@@ -401,7 +401,7 @@
         <button class="btn btn-light" onclick="abrirProbabilidadeEscolha()">Voltar</button>
     </div>
 </div>
-<div id="tabela-probUniforme">
+<div id="tabela-probabilidade">
     <table id="scrolling2" class="table table-sm table-light">
         <thead>
         <tr>
