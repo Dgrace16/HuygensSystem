@@ -1,12 +1,12 @@
 //PROBABILIDADE UNIFORME
 function calcProbUniforme() {
     document.getElementById("tabela-probabilidade").style.display = 'none';
-    let pontoMin = parseInt($('input[name="pontoMin"]').val());
-    let pontoMax = parseInt($('input[name="pontoMax"]').val());
-    let menorQProbabilidade = parseInt($('input[name="menorQProbabilidade"]').val());
-    let inicialProbabilidade = parseInt($('input[name="inicialProbabilidade"]').val());
-    let finalProbabilidade = parseInt($('input[name="finalProbabilidade"]').val());
-    let maiorQProbabilidade = parseInt($('input[name="maiorQProbabilidade"]').val());
+    let pontoMin = parseFloat($('input[name="pontoMin"]').val());
+    let pontoMax = parseFloat($('input[name="pontoMax"]').val());
+    let menorQProbabilidade = parseFloat($('input[name="menorQProbabilidade"]').val());
+    let inicialProbabilidade = parseFloat($('input[name="inicialProbabilidade"]').val());
+    let finalProbabilidade = parseFloat($('input[name="finalProbabilidade"]').val());
+    let maiorQProbabilidade = parseFloat($('input[name="maiorQProbabilidade"]').val());
     function calcMedidas(probabilidade) {
         let media = (pontoMax + pontoMin)/2;
         let desvio = Math.sqrt((Math.pow((pontoMax - pontoMin),2))/12);
@@ -20,14 +20,14 @@ function calcProbUniforme() {
     }else if(isNaN(pontoMax)){
         alert("Insira o ponto máximo")
     } else if(document.getElementById("comparacaoUniforme").value === '0'){
-        alert("Insira os dados!")
+        alert("Insira o intervalo!")
     }else if (document.getElementById("comparacaoUniforme").value === '1'){
         if (isNaN(menorQProbabilidade)){
             alert("Insira o campo que falta")
         }else {
-            let intervalo = menorQProbabilidade - pontoMin;
-            let probabilidade = (1/(pontoMax-pontoMin))*intervalo;
-            console.log(menorQProbabilidade,probabilidade);
+            let intervalo = (menorQProbabilidade - pontoMin);
+            let probabilidade = ((1/(pontoMax-pontoMin))*intervalo);
+            console.log(menorQProbabilidade,intervalo);
             document.getElementById("tabela-probabilidade").style.display = 'block';
             calcMedidas(probabilidade)
         }
@@ -95,42 +95,67 @@ function buscaTabelaZ(variavel,media,desvio,variavelAux,auxiliar) {
     let probabilidade = 0;
     if (typeof variavelAux === 'undefined'){
     let numeroZ = (Math.abs((variavel - media)/desvio)).toFixed(2);
-        numeroZ = numeroZ.toString();
-        console.log(numeroZ);
-        let tabelaZ = [];
-        for(let i = 0;i < numeroZ.length;i++){
-            tabelaZ.push(numeroZ.charAt(i))
-        }
-        let row
-        if (tabelaZ[2] !== '0') {
-             row = tabelaZ[0] + tabelaZ[1] + tabelaZ[2];
+        if(numeroZ < 4) {
+            numeroZ = numeroZ.toString();
+            console.log(numeroZ);
+            let tabelaZ = [];
+            for (let i = 0; i < numeroZ.length; i++) {
+                tabelaZ.push(numeroZ.charAt(i))
+            }
+            let row
+            if (tabelaZ[2] !== '0') {
+                row = tabelaZ[0] + tabelaZ[1] + tabelaZ[2];
+            } else {
+                row = tabelaZ[0]
+            }
+            let column = tabelaZ[3];
+            let aux = tabela[row];
+            console.log(aux[column])
+            switch (auxiliar) {
+                case "+":
+                    if (variavel < media) {
+                        probabilidade = (0.5 - aux[column]) * 100;
+                    } else if (variavel > media) {
+                        probabilidade = (0.5 + aux[column]) * 100;
+                    } else if (variavel === media) {
+                        probabilidade = (0.5) * 100;
+                    }
+                    break;
+                case "-":
+                    if (variavel < media) {
+                        probabilidade = (0.5 + aux[column]) * 100;
+                    } else if (variavel > media) {
+                        probabilidade = (0.5 - aux[column]) * 100;
+                    } else if (variavel === media) {
+                        probabilidade = (0.5) * 100;
+                    }
+                    break;
+                default:
+                    break;
+            }
         }else {
-             row = tabelaZ[0]
-        }
-        let column = tabelaZ[3];
-        let aux = tabela[row];
-        console.log(aux[column])
-        switch (auxiliar){
-            case "+":
-                if (variavel < media){
-                    probabilidade = (0.5 - aux[column])*100;
-                }else if (variavel > media){
-                    probabilidade = (0.5 + aux[column])*100;
-                }else if (variavel === media){
-                    probabilidade = (0.5)*100;
-                }
-                break;
-            case "-":
-                if (variavel < media){
-                    probabilidade = (0.5 + aux[column])*100;
-                }else if (variavel > media){
-                    probabilidade = (0.5 - aux[column])*100;
-                }else if (variavel === media){
-                    probabilidade = (0.5)*100;
-                }
-                break;
-            default:
-                break;
+            switch (auxiliar) {
+                case "+":
+                    if (variavel < media) {
+                        probabilidade = (0.5 - 0.5) * 100;
+                    } else if (variavel > media) {
+                        probabilidade = (0.5 + 0.5) * 100;
+                    } else if (variavel === media) {
+                        probabilidade = (0.5) * 100;
+                    }
+                    break;
+                case "-":
+                    if (variavel < media) {
+                        probabilidade = (0.5 + 0.5) * 100;
+                    } else if (variavel > media) {
+                        probabilidade = (0.5 - 0.5) * 100;
+                    } else if (variavel === media) {
+                        probabilidade = (0.5) * 100;
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
         console.log(auxiliar);
         document.getElementById("medidas-probNormal").innerHTML = `<td>${probabilidade.toFixed(2)}%</td>`
@@ -191,20 +216,32 @@ function calcProbNormal() {
     let media = parseFloat($('input[name="mediaInp"]').val());
     let desvio = parseFloat($('input[name="desvioInp"]').val());
     if(document.getElementById("comparacaoNormal").value === '0'){
-        alert("Insira os dados!")
+        alert("Insira o intervalo!")
     }else if (document.getElementById("comparacaoNormal").value === '1'){
-        let menorQProbabilidade = parseFloat($('input[name="menorQ-ProbabilidadeN"]').val());
-        let auxiliar = "+";
-        buscaTabelaZ(menorQProbabilidade,media,desvio,undefined,auxiliar)
+            let menorQProbabilidade = parseFloat($('input[name="menorQ-ProbabilidadeN"]').val());
+            let auxiliar = "+";
+            if (isNaN(menorQProbabilidade)){
+                alert("Insira o campo que falta")
+            }else {
+                buscaTabelaZ(menorQProbabilidade,media,desvio,undefined,auxiliar)
+            }
     }else if (document.getElementById("comparacaoNormal").value === '2'){
-        let inicialProbabilidade = parseFloat($('input[name="inicial-ProbabilidadeN"]').val());
-        let finalProbabilidade = parseFloat($('input[name="final-ProbabilidadeN"]').val());
-        buscaTabelaZ(inicialProbabilidade,media,desvio,finalProbabilidade)
-    }else if (document.getElementById("comparacaoNormal").value === '3') {
-        let maiorQProbabilidade = parseFloat($('input[name="valor-ProbabilidadeN"]').val());
-        let auxiliar = "-";
-        buscaTabelaZ(maiorQProbabilidade,media,desvio,undefined,auxiliar)
-    }
 
+            let inicialProbabilidade = parseFloat($('input[name="inicial-ProbabilidadeN"]').val());
+            let finalProbabilidade = parseFloat($('input[name="final-ProbabilidadeN"]').val());
+            if ((isNaN(inicialProbabilidade)) || (isNaN(finalProbabilidade))){
+                alert("Insira o(s) dado(s) que falta(m)")
+            }else {
+                buscaTabelaZ(inicialProbabilidade,media,desvio,finalProbabilidade)
+            }
+    }else if (document.getElementById("comparacaoNormal").value === '3') {
+            let maiorQProbabilidade = parseFloat($('input[name="valor-ProbabilidadeN"]').val());
+            let auxiliar = "-";
+            if (isNaN(maiorQProbabilidade)){
+                alert("Insira o campo que falta")
+            }else {
+                buscaTabelaZ(maiorQProbabilidade,media,desvio,undefined,auxiliar)
+            }
+    }
 }
 

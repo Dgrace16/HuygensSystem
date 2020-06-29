@@ -5,7 +5,7 @@ window.onload = function () {
     });
     document.getElementById("uploadExcel1").addEventListener("click", function() {
         if (document.getElementById("descritivaEscolha").value === '0'){
-            alert("Antes de importar os dados, por favor, selecione o tipo de ...")
+            alert("Antes de importar os dados, por favor, selecione o tipo de variável")
         }else {
             let cont = 0
             let auxiliar
