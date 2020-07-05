@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@font-face {
+    font-family: 'nomeEquipe';
+    src: url("../fonts/flaunters/Flaunters.otf");
+}
 h1,h2{
     color: #8b5cac;
     font-family: "Bodoni MT";
@@ -9,6 +13,7 @@ h1,h2{
 }
 p{
     margin: 0px 0px;
+    text-align: justify;
 }
 #artigo1{
     display:block;
@@ -49,6 +54,12 @@ p{
 .equipe{
     margin: 0px auto 20px;
     width: 600px;
+}
+h4{
+    font-family: nomeEquipe;
+}
+p strong{
+    text-transform: uppercase;
 }
 .div-redeSocial{
     display: block;

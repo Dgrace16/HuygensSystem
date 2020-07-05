@@ -90,6 +90,26 @@ function calcProbBinomial(){
         document.getElementById("medidas-probabilidade").innerHTML = `<tr><td>${(probabilidade*100).toFixed(2)}%</td><td>${media.toFixed(2)}</td><td>${desvio.toFixed(2)}</td><td>${variacao.toFixed(2)}%</td></tr>`
     }
 }
+function sucessoCalc() {
+    let sucesso = $('input[name="pSucesso"]').val()
+    console.log(sucesso)
+    if(sucesso !== ""){
+        let fracasso = 100 - sucesso
+        $('input[name="qFracasso"]').val(fracasso)
+    }else {
+        $('input[name="qFracasso"]').val("")
+    }
+}
+function fracassoCalc() {
+    let fracasso = $('input[name="qFracasso"]').val()
+    console.log(fracasso)
+    if (fracasso !== ""){
+        let sucesso = 100 - fracasso
+        $('input[name="pSucesso"]').val(sucesso)
+    }else {
+        $('input[name="pSucesso"]').val("")
+    }
+}
 //PROBABILIDADE NORMAL
 function buscaTabelaZ(variavel,media,desvio,variavelAux,auxiliar) {
     let probabilidade = 0;

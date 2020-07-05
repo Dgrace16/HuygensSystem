@@ -449,8 +449,8 @@
     <input type="image" src="Pages/images/icone-informacao.png" data-toggle="modal" data-target="#modalBinomial"/>
     <span class="txtBinomial titulos text-uppercase">Binomial</span>
     <input class="QtdeAmostra" name="qtdeAmostra" placeholder="Quantidade da amostra (n):" size="50">
-    <input class="txSucesso" name="pSucesso" placeholder="Taxa de Sucesso (p):" size="22">
-    <input class="txFracasso" name="qFracasso" placeholder="Taxa de Fracasso (q):" size="22">
+    <input class="txSucesso" name="pSucesso" placeholder="Taxa de Sucesso(p):'0-100'" size="22" onkeyup="sucessoCalc()">
+    <input class="txFracasso" name="qFracasso" placeholder="Taxa de Fracasso(q):'0-100'" size="22" onkeyup="fracassoCalc()">
     <input class="txEventos" name="Evento" placeholder="Insira os Eventos separados por ';'" size="50">
     <a href="#scrolling2"><button type="button" class="btn btn-primary" onclick="calcProbBinomial()">Calcular</button></a>
     <button class="btn btn-light" onclick="abrirProbabilidadeEscolha()">Voltar</button>
@@ -486,8 +486,8 @@
         <tr>
             <th scope="col">Probabilidade</th>
             <th scope="col">Média</th>
-            <th scope="col">Desvio Padrão</th>
-            <th scope="col">Coeficente de Variação</th>
+            <th scope="col">Desvio P.</th>
+            <th scope="col">Variância</th>
         </tr>
         </thead>
         <tbody id="medidas-probabilidade"></tbody>
