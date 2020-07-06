@@ -322,10 +322,10 @@ function calcDescritiva() {
         let nomeVariavel = $('input[name="nomeVariavel"]').val();
         let populacao = $('input[name="dadosInp"]')[0];
         let populacaoArray = populacao.value.split(';');
-        quickSort(populacaoArray)
         let unico = populacaoArray.filter(function(elem, index, self) {
             return index === self.indexOf(elem);
         });
+        console.log(unico)
         let nMax = populacaoArray[populacaoArray.length - 1] //maior valor do vetor
         let nMin = populacaoArray[0]; //compara menor valor
         let raiz = Math.round(Math.sqrt(populacaoArray.length))

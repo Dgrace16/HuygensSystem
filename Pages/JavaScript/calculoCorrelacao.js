@@ -36,8 +36,18 @@ function calcCorrelacao() {
             regreAux.y = (a * variavelXarray[i]) + parseFloat(b)
             regressao.push(regreAux)
         }
-        let equacaoY = `Y = ${a}.X + ${b}`
-        document.getElementById("medidas-correlacao").innerHTML = `<tr><td>${correlacao}%</td><td>${equacaoY}</td></tr>`
+        let equacaoY = `Y = ${a}.X + ${b}`;
+        let grau
+        if (correlacao < 30){
+            grau = "Fraca"
+        }else if (correlacao === 30 || correlacao < 70){
+            grau = "Moderada"
+        }else if (correlacao === 70 || correlacao < 100){
+            grau = "Forte"
+        }else if (correlacao === 100){
+            grau = "Perfeita"
+        }
+        document.getElementById("medidas-correlacao").innerHTML = `<tr><td>${correlacao}% - ${grau}</td><td>${equacaoY}</td></tr>`
         let ctx = document.getElementById('correlacaoChart');
         var scatterChart = new Chart(ctx, {
             type: 'scatter',
@@ -46,7 +56,8 @@ function calcCorrelacao() {
                     label: 'Regressão',
                     data: coordenada,
                     pointBackgroundColor: 'purple',
-                    backgroundColor: 'white',
+                    backgroundColor: 'white'
+                    ,
                     borderColor: 'purple',
                     showLine: false
                 },
