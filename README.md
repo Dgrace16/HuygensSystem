@@ -1,43 +1,32 @@
-<h1>HuygensSystem</h1>
+# HuygensSystem
 
-<p>
+
 HuygensSystem é um software web desenvolvido por 5 alunos da turma do 3°ADS (analise e desenvolvimento de sistema) do primeiro semestre de 2020, este repositório tem como fins educativos, para uso de aplicação de estatística em softwares.
-</p>
-<p>
 Este repositório é possível se encontrar desenvolvimento backend, frontend e sua documentação.
-</p>
 
-<p>
+
+
 HuygensSystem is a web software developed by 5 students from the 3rd ADS class (analysis and system development) of the first semester of 2020, this repository is for educational purposes, for the use of statistics in software.
-</p>
-<p>
 This repository is possible to find backend, frontend and documentation development.
-</p>
 
-<ul>
-    <li>
-    <a helf = "https://matheussouza89.github.io/HuygensSystem" > https://matheussouza89.github.io/HuygensSystem </a>
-    </li>
-</ul>
+   * [Preview](https://matheussouza89.github.io/HuygensSystem) 
 
-<h3>
-    Tecnologias - Technology
-</h3>
+## Tecnologias - Technology
 
-<ul>
-    <li><a helf = "https://developer.mozilla.org/pt-BR/docs/Web/HTML"> HTML </a></li>
-    <li><a helf = "https://developer.mozilla.org/pt-BR/docs/Archive/CSS3"> CSS3 </a></li>
-    <li><a helf = "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"> JavaScript </a></li>
-    <li><a helf = "https://michalsnik.github.io/aos"> Animate on Scroll </a></li>
-    <li><a helf = "https://jquery.com"> jquery </a></li>
-    <li><a helf = "https://www.chartjs.org"> Chart.js </a> </li>
-    <li><a helf = "https://getbootstrap.com.br"> bootstrap </a> </li>
-</ul>
-<h3> Autores - authors</h3>
 
-<p><a helf = "dgracecenteno@gmail.com">Douglas</a>- (SUPORTE BACKEND, SUPORTE A ENGENHARIA DE SOFTWARE E CÁLCULOS)</p>
-<p><a helf = "guilherme.oliveira128@fatec.sp.gov.br">Guilherme</a> -  (SUPORTE BACKEND E CÁLCULOS)</p>
-<p><a helf = "matheus.souza89@fatec.sp.gov.br">Matheus</a> -  (DESENVOLVEDOR BACK/FRONTEND, SQUAD LEAD E CÁLCULOS)</p>
-<p><a helf = "mehida.melo@fatec.sp.gov.br">Mehida</a> -  (ENGENHEIRA DE SOFTWARE)</p>
-<p><a helf = "silvio.freitas@fatec.sp.gov.br">Silvio</a> -  (QUALITY ASSURANCE)</p>
+* [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)  
+* [CSS3](https://developer.mozilla.org/pt-BR/docs/Archive/CSS3)  
+* [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+* [Animate on Scroll](https://michalsnik.github.io/aos)
+* [jquery](https://jquery.com)
+* [Chart.js](https://www.chartjs.org)
+* [bootstrap](https://getbootstrap.com.br) 
+
+## Autores - authors
+
+Douglas- dgracecenteno@gmail.com - (SUPORTE BACKEND, SUPORTE A ENGENHARIA DE SOFTWARE E CÁLCULOS)
+Guilherme - guilherme.oliveira128@fatec.sp.gov.br - (SUPORTE BACKEND E CÁLCULOS)
+Matheus - matheus.souza89@fatec.sp.gov.br - (DESENVOLVEDOR BACK/FRONTEND, SQUAD LEAD E CÁLCULOS)
+Mehida - mehida.melo@fatec.sp.gov.br - (ENGENHEIRA DE SOFTWARE)
+Silvio - silvio.freitas@fatec.sp.gov.br - (QUALITY ASSURANCE)
 
