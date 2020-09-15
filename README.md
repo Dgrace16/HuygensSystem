@@ -35,9 +35,9 @@ This repository is possible to find backend, frontend and documentation developm
 </ul>
 <h3> Autores - authors</h3>
 
-<p><a helf = "dgracecenteno@gmail.com"></a>- Douglas (SUPORTE BACKEND, SUPORTE A ENGENHARIA DE SOFTWARE E CÁLCULOS)</p>
-<p><a helf = "guilherme.oliveira128@fatec.sp.gov.br"></a> - Guilherme (SUPORTE BACKEND E CÁLCULOS)</p>
-<p><a helf = "matheus.souza89@fatec.sp.gov.br"></a> - Matheus (DESENVOLVEDOR BACK/FRONTEND, SQUAD LEAD E CÁLCULOS)</p>
-<p><a helf = "mehida.melo@fatec.sp.gov.br"></a> - Mehida (ENGENHEIRA DE SOFTWARE)</p>
-<p><a helf = "silvio.freitas@fatec.sp.gov.br"></a> - Silvio (QUALITY ASSURANCE)</p>
+<p><a helf = "dgracecenteno@gmail.com">Douglas</a>- (SUPORTE BACKEND, SUPORTE A ENGENHARIA DE SOFTWARE E CÁLCULOS)</p>
+<p><a helf = "guilherme.oliveira128@fatec.sp.gov.br">Guilherme</a> -  (SUPORTE BACKEND E CÁLCULOS)</p>
+<p><a helf = "matheus.souza89@fatec.sp.gov.br"Matheus></a> -  (DESENVOLVEDOR BACK/FRONTEND, SQUAD LEAD E CÁLCULOS)</p>
+<p><a helf = "mehida.melo@fatec.sp.gov.br">Mehida</a> -  (ENGENHEIRA DE SOFTWARE)</p>
+<p><a helf = "silvio.freitas@fatec.sp.gov.br"Silvio></a> -  (QUALITY ASSURANCE)</p>
 
