@@ -29,7 +29,7 @@ This repository is possible to find backend, frontend and documentation developm
     <li><a helf = "https://developer.mozilla.org/pt-BR/docs/Archive/CSS3"> CSS3 </a></li>
     <li><a helf = "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"> JavaScript </a></li>
     <li><a helf = "https://michalsnik.github.io/aos"> Animate on Scroll </a></li>
-    <li><a helf = "https://jquery.com"> jquery </a> </li>
+    <li><a helf = "https://jquery.com"> jquery </a></li>
     <li><a helf = "https://www.chartjs.org"> Chart.js </a> </li>
     <li><a helf = "https://getbootstrap.com.br"> bootstrap </a> </li>
 </ul>
@@ -37,7 +37,7 @@ This repository is possible to find backend, frontend and documentation developm
 
 <p><a helf = "dgracecenteno@gmail.com">Douglas</a>- (SUPORTE BACKEND, SUPORTE A ENGENHARIA DE SOFTWARE E CÁLCULOS)</p>
 <p><a helf = "guilherme.oliveira128@fatec.sp.gov.br">Guilherme</a> -  (SUPORTE BACKEND E CÁLCULOS)</p>
-<p><a helf = "matheus.souza89@fatec.sp.gov.br"Matheus></a> -  (DESENVOLVEDOR BACK/FRONTEND, SQUAD LEAD E CÁLCULOS)</p>
+<p><a helf = "matheus.souza89@fatec.sp.gov.br">Matheus</a> -  (DESENVOLVEDOR BACK/FRONTEND, SQUAD LEAD E CÁLCULOS)</p>
 <p><a helf = "mehida.melo@fatec.sp.gov.br">Mehida</a> -  (ENGENHEIRA DE SOFTWARE)</p>
-<p><a helf = "silvio.freitas@fatec.sp.gov.br"Silvio></a> -  (QUALITY ASSURANCE)</p>
+<p><a helf = "silvio.freitas@fatec.sp.gov.br">Silvio</a> -  (QUALITY ASSURANCE)</p>
 
