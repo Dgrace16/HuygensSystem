@@ -26,13 +26,13 @@
 
 <ul>
     <li><a helf = https://developer.mozilla.org/pt-BR/docs/Web/HTML> HTML </a></li>
-    <li><a helf = https://developer.mozilla.org/pt-BR/docs/Archive/CSS3> CSS3 </a> </li>
+    <li><a helf = https://developer.mozilla.org/pt-BR/docs/Archive/CSS3> CSS3 </a></li>
     <li><a helf = https://developer.mozilla.org/pt-BR/docs/Web/JavaScript> JavaScript </a><li>
-    <li><a helf = https://michalsnik.github.io/aos> Animate on Scroll </a> </li>
+    <li><a helf = https://michalsnik.github.io/aos> Animate on Scroll </a></li>
     <li><a helf = https://jquery.com> jquery </a> </li>
     <li><a helf = https://www.chartjs.org> Chart.js </a> </li>
     <li><a helf = https://getbootstrap.com.br> bootstrap </a> </li>
-<ul>
+</ul>
 <h3> Autores - authors</h3>
 
 <p>dgracecenteno@gmail.com - Douglas (SUPORTE BACKEND, SUPORTE A ENGENHARIA DE SOFTWARE E CÁLCULOS)</p>
