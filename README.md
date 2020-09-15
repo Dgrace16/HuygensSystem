@@ -1,17 +1,17 @@
 <h1>HuygensSystem</h1>
 
 <p>
-"HuygensSystem é um software web desenvolvido por 5 alunos da turma do 3°ADS (analise e desenvolvimento de sistema) do primeiro semestre de 2020, este repositório tem como fins educativos, para uso de aplicação de estatística em softwares." 
+HuygensSystem é um software web desenvolvido por 5 alunos da turma do 3°ADS (analise e desenvolvimento de sistema) do primeiro semestre de 2020, este repositório tem como fins educativos, para uso de aplicação de estatística em softwares.
 </p>
 <p>
-"Este repositório é possível se encontrar desenvolvimento backend, frontend e sua documentação."
+Este repositório é possível se encontrar desenvolvimento backend, frontend e sua documentação.
 </p>
 
 <p>
-"HuygensSystem is a web software developed by 5 students from the 3rd ADS class (analysis and system development) of the first semester of 2020, this repository is for educational purposes, for the use of statistics in software."
+HuygensSystem is a web software developed by 5 students from the 3rd ADS class (analysis and system development) of the first semester of 2020, this repository is for educational purposes, for the use of statistics in software.
 </p>
 <p>
-"This repository is possible to find backend, frontend and documentation development."
+This repository is possible to find backend, frontend and documentation development.
 </p>
 
 <ul>
