@@ -16,7 +16,7 @@ This repository is possible to find backend, frontend and documentation developm
 
 <ul>
     <li>
-    <a helf = "https://matheussouza89.github.io/HuygensSystem" rel="nofollow"> Preview </a>
+    <a helf = "https://matheussouza89.github.io/HuygensSystem" > https://matheussouza89.github.io/HuygensSystem </a>
     </li>
 </ul>
 
