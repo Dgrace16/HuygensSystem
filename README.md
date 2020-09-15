@@ -25,8 +25,13 @@ This repository is possible to find backend, frontend and documentation developm
 ## Autores - authors
 
 Douglas- dgracecenteno@gmail.com - (SUPORTE BACKEND, SUPORTE A ENGENHARIA DE SOFTWARE E CÁLCULOS)
+
 Guilherme - guilherme.oliveira128@fatec.sp.gov.br - (SUPORTE BACKEND E CÁLCULOS)
+
 Matheus - matheus.souza89@fatec.sp.gov.br - (DESENVOLVEDOR BACK/FRONTEND, SQUAD LEAD E CÁLCULOS)
+
 Mehida - mehida.melo@fatec.sp.gov.br - (ENGENHEIRA DE SOFTWARE)
+
 Silvio - silvio.freitas@fatec.sp.gov.br - (QUALITY ASSURANCE)
+
 
